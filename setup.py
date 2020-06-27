@@ -22,7 +22,7 @@ setuptools.setup(
     version=version,
     author="Volker Siepmann",
     author_email="volker.siepmann@yara.com",
-    description="Card maker",
+    description="Maria's Card maker",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/VolkerSiep/MariasCardMaker",
