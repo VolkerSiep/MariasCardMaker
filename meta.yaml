@@ -16,6 +16,7 @@ requirements:
     - python >=3.7
     - wxpython >=4.0
     - openpyxl >=3.0
+    - numpy >=1.17
 
 about:
   license: GPL-3.0 
