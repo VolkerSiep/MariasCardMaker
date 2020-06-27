@@ -1,9 +1,9 @@
 package:
   name: mcm
-  version: "V1.0a0"
+  version: "V1.0a1"
 
 source:
-  git_rev: V1.0a0
+  git_rev: V1.0a1
   git_url: https://github.com/VolkerSiep/MariasCardMaker.git
 
 build:
