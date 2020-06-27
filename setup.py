@@ -31,11 +31,5 @@ setuptools.setup(
     include_package_data=True,
     classifiers=[
         "Programming Language :: Python :: 3",
-    ],
-    python_requires='>=3.6',
-    install_requires=[
-        "python>=3.7",
-        "wxpython>=4.0.7",
-        "openpyxl>=3.0"
-        ]
+    ]
 )
