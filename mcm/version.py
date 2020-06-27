@@ -6,6 +6,6 @@ Created on Sat Jun 27 23:20:57 2020
 @author: volker
 """
 
-version = "V1.0a1"
+version = "v1.0a2"
 release_date = "June 27th, 2020"
 release_year = release_date[-4:]
