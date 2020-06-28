@@ -1,6 +1,6 @@
 package:
   name: mcm
-  version: "v1.0a3"
+  version: v1.0a3
 
 source:
   git_rev: v1.0a3
@@ -13,14 +13,14 @@ build:
 
 requirements:
   build:
-    - python >=3.7
-    - numpy >=1.17
+    - python >=3
+    - numpy >=1.1
+    - setuptools
 
   run:
-    - python >=3.7
+    - python >=3
     - wxpython >=4.0
-    - openpyxl >=3.0
-    - numpy >=1.17
+    - openpyxl >=2.0
 
 about:
   license: GPL-3.0 

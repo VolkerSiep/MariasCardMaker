@@ -15,13 +15,13 @@ from mcm.version import version
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
-packages = setuptools.find_packages(include=["mdm.*", "mdm"])
+packages = setuptools.find_packages(include=["mdm"])
 
 setuptools.setup(
     name="mdm",
     version=version,
     author="Volker Siepmann",
-    author_email="volker.siepmann@yara.com",
+    author_email="volker.siepmann@gmail.com",
     description="Maria's Card maker",
     long_description=long_description,
     long_description_content_type="text/markdown",
