@@ -49,7 +49,7 @@ class CardMaker(wx.Frame):
         sizer = wx.BoxSizer(wx.HORIZONTAL)
         sizer.Add(sizer1, 1, wx.EXPAND)
         zangoose = Path(__file__).parents[0] / "Zangoose.png"
-        image = wx.Image(zangoose, wx.BITMAP_TYPE_ANY)
+        image = wx.Image(str(zangoose), wx.BITMAP_TYPE_ANY)
         image = image.Scale(418 // 4, 457 // 4, quality=wx.IMAGE_QUALITY_HIGH)
         image = wx.StaticBitmap(self, -1, wx.Bitmap(image))
         sizer.Add(image, 0, wx.ALL, 3)
