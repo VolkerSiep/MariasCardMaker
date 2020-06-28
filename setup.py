@@ -15,10 +15,10 @@ from mcm.version import version
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
-packages = setuptools.find_packages(include=["mdm"])
+packages = setuptools.find_packages(include=["mcm"])
 
 setuptools.setup(
-    name="mdm",
+    name="mcm",
     version=version,
     author="Volker Siepmann",
     author_email="volker.siepmann@gmail.com",
@@ -27,7 +27,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/VolkerSiep/MariasCardMaker",
     packages=packages,
-    package_data={'mdm': ['Zangoose.png']},
+    package_data={'mcm': ['Zangoose.png']},
     include_package_data=True,
     classifiers=[
         "Programming Language :: Python :: 3",

@@ -14,7 +14,8 @@ build:
 requirements:
   build:
     - python >=3
-    - numpy >=1.12
+    - wxpython >=4.0
+    - openpyxl >=2.0
     - setuptools
 
   run:
