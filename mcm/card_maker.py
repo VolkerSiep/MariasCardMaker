@@ -8,6 +8,7 @@ Created on Sat Jun 20 22:51:39 2020
 # stdlib modules
 from os import getcwd
 from time import time
+from pathlib import Path
 
 # external modules
 import wx
@@ -47,7 +48,8 @@ class CardMaker(wx.Frame):
         wx.Log.SetActiveTarget(logger)
         sizer = wx.BoxSizer(wx.HORIZONTAL)
         sizer.Add(sizer1, 1, wx.EXPAND)
-        image = wx.Image('Zangoose.png', wx.BITMAP_TYPE_ANY)
+        zangoose = Path(__file__).parents[0] / "Zangoose.png"
+        image = wx.Image(zangoose, wx.BITMAP_TYPE_ANY)
         image = image.Scale(418 // 4, 457 // 4, quality=wx.IMAGE_QUALITY_HIGH)
         image = wx.StaticBitmap(self, -1, wx.Bitmap(image))
         sizer.Add(image, 0, wx.ALL, 3)
