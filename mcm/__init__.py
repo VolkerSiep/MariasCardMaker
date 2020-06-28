@@ -1,1 +1,1 @@
-from card_maker import main as start
+from .card_maker import main as start

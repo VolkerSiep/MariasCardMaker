@@ -13,7 +13,7 @@ from time import time
 import wx
 
 # internal modules
-from generator import Generator
+from .generator import Generator
 
 
 class CardMaker(wx.Frame):
