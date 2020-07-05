@@ -1,0 +1,45 @@
+{% set setup_data = load_setup_py_data() %}
+
+package:
+    name: mcm
+    version: {{setup_data['version']}}
+
+source:
+    path: ..
+
+build:
+    noarch: python
+    number: 1
+    script: pip install .
+    entry_points:
+        - mcm = mcm:start
+
+test:
+    requires:
+        - pytest
+    imports:
+        - mcm
+    commands:
+        - pytest
+    source_files:
+        - pytest.ini
+        - unittests/*.png
+        - unittests/example.xlsx
+        - unittests/*.py
+
+requirements:
+    build:
+        - python >=3
+        - wxPython >=4
+        - openpyxl >=3
+        - setuptools
+    run:
+        - python >=3
+        - wxPython >=4
+        - openpyxl >=3
+
+
+
+about:
+    license: GPLv3
+    license_file: LICENSE.txt

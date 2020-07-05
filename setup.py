@@ -28,6 +28,7 @@ setuptools.setup(
     url="https://github.com/VolkerSiep/MariasCardMaker",
     packages=packages,
     package_data={'mcm': ['Zangoose.png']},
+    # data_files=[('', ['mcm/Zangoose.png'])],
     include_package_data=True,
     classifiers=[
         "Programming Language :: Python :: 3",

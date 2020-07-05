@@ -85,8 +85,8 @@ class Generator:
             max_width = conf.get("max_width", image.Width)
             max_height = conf.get("max_height", image.Height)
             scale = min([max_width / image.Width, max_height / image.Height])
-            image = image.Scale(image.Width * scale,
-                                image.Height * scale,
+            image = image.Scale(int(image.Width * scale),
+                                int(image.Height * scale),
                                 quality=wx.IMAGE_QUALITY_HIGH)
             y_max = dc.GetSize()[1]
             dc.DrawBitmap(wx.Bitmap(image), conf["x"], y_max - conf["y"])
@@ -102,9 +102,8 @@ class Generator:
                      if conf["italics"] else wx.FONTSTYLE_NORMAL)
             weight = (wx.FONTWEIGHT_BOLD
                      if conf["italics"] else wx.FONTWEIGHT_NORMAL)
-            font = wx.Font(conf["size"], wx.FONTFAMILY_DEFAULT, style, weight,
-                           conf["underline"], conf["font"]
-                           )
+            font = wx.Font(int(conf["size"]), wx.FONTFAMILY_DEFAULT, style,
+                           weight, conf["underline"], conf["font"])
             dc.SetFont(font)
 
             # align
@@ -133,7 +132,7 @@ class Generator:
         filename = "{}_{page}{}".format(*splitext(data["filename"]),page=page)
         filename = self.__excel_dir / target_folder / filename
         wx.LogMessage(f"    Saving card '{filename}'")
-        wx.Yield()
+        wx.GetApp().Yield()
         bitmap = dc.GetAsBitmap()
         bitmap.SaveFile(str(filename), wx.BITMAP_TYPE_JPEG)
         return True
@@ -184,13 +183,4 @@ class Generator:
         return config
 
 
-def main():
-    app = wx.App()
-    file = "Cards/vocabularyAndQuestions_updated 20200621.xlsx"
-    wx.Log.SetActiveTarget(wx.LogStderr())
-    generator = Generator(file)
-    generator.process()
-    del app
 
-if __name__ == "__main__":
-    main()
